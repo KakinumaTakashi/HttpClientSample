@@ -16,6 +16,7 @@ using Windows.Storage.Streams;
 using Windows.UI.Xaml.Media.Imaging;
 
 using Windows.Data.Pdf;
+using System.Net.Http.Headers;
 
 namespace HttpClientSample
 {
@@ -43,12 +44,21 @@ namespace HttpClientSample
         {
             using (HttpClient httpClient = new HttpClient())
             {
-                /*--- PDF download ---*/
                 // HTTPリクエスト作成
                 HttpRequestMessage httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, REST_API_URL);
 
                 // HTTPヘッダの設定(必要に応じて)
                 //httpRequestMessage.Headers.Add(@"key", value);
+
+                // Basic認証(必要に応じて)
+                //string username = @"username";
+                //string password = @"password";
+                //string authorizationParam = Convert.ToBase64String(Encoding.ASCII.GetBytes(String.Format("{0}:{1}", username, password)));
+                //httpRequestMessage.Headers.Authorization = new AuthenticationHeaderValue("Basic", authorizationParam);
+
+                Console.WriteLine("<HTTP request Header>-----------------------------------------------------------");
+                Console.WriteLine(httpRequestMessage.Headers.ToString());
+                Console.WriteLine("--------------------------------------------------------------------------------");
 
                 // HTTPリクエスト送信(非同期)
                 HttpResponseMessage httpResponseMessage = null;
@@ -79,6 +89,11 @@ namespace HttpClientSample
                     MessageBox.Show(message);
                     return;
                 }
+
+                Console.WriteLine("<HTTP request Header>-----------------------------------------------------------");
+                Console.WriteLine(httpResponseMessage.Headers.ToString());
+                Console.WriteLine("--------------------------------------------------------------------------------");
+
                 try
                 {
                     // HTTPレスポンスからPDFデータを取得
