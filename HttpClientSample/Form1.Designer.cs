@@ -30,9 +30,9 @@
         {
             this.ButtonDownload = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ButtonUpload = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ButtonUpload = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.panel2.SuspendLayout();
@@ -59,6 +59,16 @@
             this.panel1.Size = new System.Drawing.Size(1003, 35);
             this.panel1.TabIndex = 1;
             // 
+            // ButtonUpload
+            // 
+            this.ButtonUpload.Location = new System.Drawing.Point(84, 3);
+            this.ButtonUpload.Name = "ButtonUpload";
+            this.ButtonUpload.Size = new System.Drawing.Size(75, 23);
+            this.ButtonUpload.TabIndex = 1;
+            this.ButtonUpload.Text = "Upload";
+            this.ButtonUpload.UseVisualStyleBackColor = true;
+            this.ButtonUpload.Click += new System.EventHandler(this.ButtonUpload_Click);
+            // 
             // pictureBox
             // 
             this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -79,16 +89,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1003, 509);
             this.panel2.TabIndex = 3;
-            // 
-            // ButtonUpload
-            // 
-            this.ButtonUpload.Location = new System.Drawing.Point(85, 4);
-            this.ButtonUpload.Name = "ButtonUpload";
-            this.ButtonUpload.Size = new System.Drawing.Size(75, 23);
-            this.ButtonUpload.TabIndex = 1;
-            this.ButtonUpload.Text = "Upload";
-            this.ButtonUpload.UseVisualStyleBackColor = true;
-            this.ButtonUpload.Click += new System.EventHandler(this.ButtonUpload_Click);
             // 
             // Form1
             // 
